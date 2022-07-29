@@ -10,6 +10,8 @@
 #import "M3U8ExtXStreamInfList.h"
 #import "M3U8ExtXKey.h"
 #import "M3U8ExtXMediaList.h"
+#import "M3U8ExtXIFrameInf.h"
+#import "M3U8ExtXIFrameInfList.h"
 
 @interface M3U8MasterPlaylist : NSObject
 
@@ -25,6 +27,7 @@
 
 @property (readonly, nonatomic, strong) M3U8ExtXStreamInfList *xStreamList;
 @property (readonly, nonatomic, strong) M3U8ExtXMediaList *xMediaList;
+@property (readonly, nonatomic, strong) M3U8ExtXIFrameInfList *xIFrameList;
 
 - (NSArray *)allStreamURLs;
 

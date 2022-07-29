@@ -5,8 +5,12 @@
 //  Created by Sun Jin on 2017/6/19.
 //  Copyright © 2017年 Allen. All rights reserved.
 //
-
+#import <TargetConditionals.h>
+#if !TARGET_OS_OSX
 #import <UIKit/UIKit.h>
+#else
+#import <Foundation/Foundation.h>
+#endif
 
 //! Project version number for M3U8KitDynamic.
 FOUNDATION_EXPORT double M3U8KitVersionNumber;

@@ -18,7 +18,7 @@ extern MediaResoulution MediaResolutionMake(float width, float height);
 
 extern const MediaResoulution MediaResoulutionZero;
 NSString * NSStringFromMediaResolution(MediaResoulution resolution);
-
+MediaResoulution MediaResolutionFromString(NSString *string);
 /*!
  @class M3U8SegmentInfo
  @abstract This is the class indicates #EXT-X-STREAM-INF:<attribute-list> + <URI> in master playlist file.

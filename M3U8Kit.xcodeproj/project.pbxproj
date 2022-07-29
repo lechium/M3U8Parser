@@ -27,6 +27,12 @@
 		01B38E3E20EA308F00AC6443 /* M3U8SegmentInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1481EF784E500D16AFD /* M3U8SegmentInfoList.m */; };
 		01B38E4320EA30AB00AC6443 /* M3U8LineReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B38E4020EA30AB00AC6443 /* M3U8LineReader.m */; };
 		01B38E4420EA30FD00AC6443 /* M3U8LineReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B38E4020EA30AB00AC6443 /* M3U8LineReader.m */; };
+		4C29F70328934681000FBAC3 /* M3U8ExtXIFrameInfList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29F6FF28934681000FBAC3 /* M3U8ExtXIFrameInfList.m */; };
+		4C29F70428934681000FBAC3 /* M3U8ExtXIFrameInfList.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C29F70028934681000FBAC3 /* M3U8ExtXIFrameInfList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C29F70528934681000FBAC3 /* M3U8ExtXIFrameInf.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29F70128934681000FBAC3 /* M3U8ExtXIFrameInf.m */; };
+		4C29F70628934681000FBAC3 /* M3U8ExtXIFrameInf.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C29F70228934681000FBAC3 /* M3U8ExtXIFrameInf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C29F70728934B6D000FBAC3 /* M3U8ExtXIFrameInfList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29F6FF28934681000FBAC3 /* M3U8ExtXIFrameInfList.m */; };
+		4C29F70828934B70000FBAC3 /* M3U8ExtXIFrameInf.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29F70128934681000FBAC3 /* M3U8ExtXIFrameInf.m */; };
 		9D79F1291EF77CE500D16AFD /* M3U8Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F1271EF77CE500D16AFD /* M3U8Kit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D79F14A1EF784E500D16AFD /* NSString+m3u8.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F12F1EF784E500D16AFD /* NSString+m3u8.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D79F14C1EF784E500D16AFD /* NSString+m3u8.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1301EF784E500D16AFD /* NSString+m3u8.m */; };
@@ -78,6 +84,10 @@
 		01B38E2D20EA2F8B00AC6443 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01B38E3F20EA30AB00AC6443 /* M3U8LineReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3U8LineReader.h; sourceTree = "<group>"; };
 		01B38E4020EA30AB00AC6443 /* M3U8LineReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3U8LineReader.m; sourceTree = "<group>"; };
+		4C29F6FF28934681000FBAC3 /* M3U8ExtXIFrameInfList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3U8ExtXIFrameInfList.m; sourceTree = "<group>"; };
+		4C29F70028934681000FBAC3 /* M3U8ExtXIFrameInfList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3U8ExtXIFrameInfList.h; sourceTree = "<group>"; };
+		4C29F70128934681000FBAC3 /* M3U8ExtXIFrameInf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3U8ExtXIFrameInf.m; sourceTree = "<group>"; };
+		4C29F70228934681000FBAC3 /* M3U8ExtXIFrameInf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3U8ExtXIFrameInf.h; sourceTree = "<group>"; };
 		9D05821D18E52DF500A12776 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9D79F1251EF77CE400D16AFD /* M3U8Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M3U8Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D79F1271EF77CE500D16AFD /* M3U8Kit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3U8Kit.h; sourceTree = "<group>"; };
@@ -213,6 +223,10 @@
 				F97F1AAE2204979A006F5717 /* M3U8ExtXKey.m */,
 				012455B125257F2900AF62C3 /* M3U8ExtXByteRange.h */,
 				012455B225257F2900AF62C3 /* M3U8ExtXByteRange.m */,
+				4C29F70228934681000FBAC3 /* M3U8ExtXIFrameInf.h */,
+				4C29F70128934681000FBAC3 /* M3U8ExtXIFrameInf.m */,
+				4C29F70028934681000FBAC3 /* M3U8ExtXIFrameInfList.h */,
+				4C29F6FF28934681000FBAC3 /* M3U8ExtXIFrameInfList.m */,
 				9D79F13A1EF784E500D16AFD /* M3U8ExtXMediaList.h */,
 				9D79F13B1EF784E500D16AFD /* M3U8ExtXMediaList.m */,
 				9D79F13C1EF784E500D16AFD /* M3U8ExtXStreamInf.h */,
@@ -249,6 +263,7 @@
 			files = (
 				9D79F16E1EF784E500D16AFD /* M3U8MediaPlaylist.h in Headers */,
 				9D79F1541EF784E500D16AFD /* M3U8PlaylistModel.h in Headers */,
+				4C29F70628934681000FBAC3 /* M3U8ExtXIFrameInf.h in Headers */,
 				9D79F1581EF784E500D16AFD /* M3U8TagsAndAttributes.h in Headers */,
 				9D79F1661EF784E500D16AFD /* M3U8ExtXStreamInfList.h in Headers */,
 				9D79F1721EF784E500D16AFD /* M3U8SegmentInfo.h in Headers */,
@@ -257,6 +272,7 @@
 				9D79F1761EF784E500D16AFD /* M3U8SegmentInfoList.h in Headers */,
 				9D79F1291EF77CE500D16AFD /* M3U8Kit.h in Headers */,
 				9D79F14A1EF784E500D16AFD /* NSString+m3u8.h in Headers */,
+				4C29F70428934681000FBAC3 /* M3U8ExtXIFrameInfList.h in Headers */,
 				9D79F1621EF784E500D16AFD /* M3U8ExtXStreamInf.h in Headers */,
 				9D79F14E1EF784E500D16AFD /* NSURL+m3u8.h in Headers */,
 				9D79F16A1EF784E500D16AFD /* M3U8MasterPlaylist.h in Headers */,
@@ -372,10 +388,12 @@
 				01B38E3C20EA308F00AC6443 /* M3U8MediaPlaylist.m in Sources */,
 				01B38E3520EA308F00AC6443 /* NSURL+m3u8.m in Sources */,
 				01B38E3D20EA308F00AC6443 /* M3U8SegmentInfo.m in Sources */,
+				4C29F70728934B6D000FBAC3 /* M3U8ExtXIFrameInfList.m in Sources */,
 				011F5487222E73BA00966918 /* StringExample.m in Sources */,
 				01B38E4320EA30AB00AC6443 /* M3U8LineReader.m in Sources */,
 				01B38E3B20EA308F00AC6443 /* M3U8MasterPlaylist.m in Sources */,
 				01B38E3720EA308F00AC6443 /* M3U8ExtXMedia.m in Sources */,
+				4C29F70828934B70000FBAC3 /* M3U8ExtXIFrameInf.m in Sources */,
 				01B38E3920EA308F00AC6443 /* M3U8ExtXStreamInf.m in Sources */,
 				01B38E3420EA308F00AC6443 /* NSString+m3u8.m in Sources */,
 				012455C62525ABFD00AF62C3 /* M3U8ExtXByteRange.m in Sources */,
@@ -394,8 +412,10 @@
 				9D79F16C1EF784E500D16AFD /* M3U8MasterPlaylist.m in Sources */,
 				9D79F1701EF784E500D16AFD /* M3U8MediaPlaylist.m in Sources */,
 				9D79F1741EF784E500D16AFD /* M3U8SegmentInfo.m in Sources */,
+				4C29F70528934681000FBAC3 /* M3U8ExtXIFrameInf.m in Sources */,
 				9D79F1681EF784E500D16AFD /* M3U8ExtXStreamInfList.m in Sources */,
 				9D79F1781EF784E500D16AFD /* M3U8SegmentInfoList.m in Sources */,
+				4C29F70328934681000FBAC3 /* M3U8ExtXIFrameInfList.m in Sources */,
 				012455C22525ABF700AF62C3 /* M3U8ExtXByteRange.m in Sources */,
 				9D79F1601EF784E500D16AFD /* M3U8ExtXMediaList.m in Sources */,
 				9D79F1641EF784E500D16AFD /* M3U8ExtXStreamInf.m in Sources */,

@@ -12,6 +12,7 @@
 #import "NSURL+m3u8.h"
 #import "M3U8LineReader.h"
 
+
 // #define M3U8_EXT_X_STREAM_INF_CLOSED_CAPTIONS   @"CLOSED-CAPTIONS" // The value can be either a quoted-string or an enumerated-string with the value NONE.
 //    NSArray *quotedValueAttrs = @[@"URI", @"KEYFORMAT", @"KEYFORMATVERSIONS", @"GROUP-ID", @"LANGUAGE", @"ASSOC-LANGUAGE", @"NAME", @"INSTREAM-ID", @"CHARACTERISTICS", @"CODECS", @"AUDIO", @"VIDEO", @"SUBTITLES", @"BYTERANGE"];
 
@@ -27,7 +28,7 @@
 
 @property (nonatomic, strong) M3U8ExtXStreamInfList *xStreamList;
 @property (nonatomic, strong) M3U8ExtXMediaList *xMediaList;
-
+@property (nonatomic, strong) M3U8ExtXIFrameInfList *xIFrameList;
 @end
 
 @implementation M3U8MasterPlaylist
@@ -59,7 +60,7 @@
     
     self.xStreamList = [[M3U8ExtXStreamInfList alloc] init];
     self.xMediaList = [[M3U8ExtXMediaList alloc] init];
-    
+    self.xIFrameList = [[M3U8ExtXIFrameInfList alloc] init];
     M3U8LineReader* reader = [[M3U8LineReader alloc] initWithText:self.originalText];
     
     while (true) {
@@ -109,7 +110,20 @@
         // Ignore the following tag, which is not implemented yet.
         // #EXT-X-I-FRAME-STREAM-INF:BANDWIDTH=65531,PROGRAM-ID=1,CODECS="avc1.42c00c",RESOLUTION=320x180,URI="/talks/769/video/64k_iframe.m3u8?sponsor=Ripple"
         else if ([line hasPrefix:M3U8_EXT_X_I_FRAME_STREAM_INF]) {
+            NSRange range = [line rangeOfString:M3U8_EXT_X_I_FRAME_STREAM_INF];
+            NSString *attribute_list = [line substringFromIndex:range.location + range.length];
+            NSMutableDictionary *attr = attribute_list.m3u_attributesFromAssignment;
+            if (self.originalURL) {
+                attr[M3U8_URL] = self.originalURL;
+            }
             
+            if (self.baseURL) {
+                attr[M3U8_BASE_URL] = self.baseURL;
+            }
+            
+            M3U8ExtXIFrameInf *xIFrameInf = [[M3U8ExtXIFrameInf alloc] initWithDictionary:attr];
+            [self.xIFrameList addExtXIFrameInf:xIFrameInf];
+            //[self.xStreamList addExtXStreamInf:xStreamInf];
             
         }
         
@@ -192,6 +206,13 @@
         [str appendString:media.m3u8PlainString];
         [str appendString:@"\n"];
     }
+    
+    for (NSInteger index = 0; index < self.xIFrameList.count; index ++) {
+        M3U8ExtXIFrameInf *xsinf = [self.xIFrameList xIFrameInfAtIndex:index];
+        [str appendString:xsinf.m3u8PlainString];
+        [str appendString:@"\n"];
+    }
+    
     
     return str;
 }
