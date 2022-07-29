@@ -68,7 +68,7 @@
 - (NSString *)indexPlaylistName;
 
 - (NSString *)prefixOfSegmentNameInPlaylist:(M3U8MediaPlaylist *)playlist;
-- (NSString *)sufixOfSegmentNameInPlaylist:(M3U8MediaPlaylist *)playlist;
+- (NSString *)suffixOfSegmentNameInPlaylist:(M3U8MediaPlaylist *)playlist;
 
 - (NSArray *)segmentNamesForPlaylist:(M3U8MediaPlaylist *)playlist;
 

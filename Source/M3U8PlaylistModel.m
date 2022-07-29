@@ -190,7 +190,7 @@
     return prefix;
 }
 
-- (NSString *)sufixOfSegmentNameInPlaylist:(M3U8MediaPlaylist *)playlist {
+- (NSString *)suffixOfSegmentNameInPlaylist:(M3U8MediaPlaylist *)playlist {
     NSString *prefix = nil;
     
     switch (playlist.type) {
@@ -215,7 +215,7 @@
 - (NSArray *)segmentNamesForPlaylist:(M3U8MediaPlaylist *)playlist {
     
     NSString *prefix = [self prefixOfSegmentNameInPlaylist:playlist];
-    NSString *sufix = [self sufixOfSegmentNameInPlaylist:playlist];
+    NSString *sufix = [self suffixOfSegmentNameInPlaylist:playlist];
     NSMutableArray *names = [NSMutableArray array];
     
     NSArray *URLs = playlist.allSegmentURLs;

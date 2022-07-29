@@ -155,6 +155,14 @@
             }
         }
     }
+    for (int i = 0; i < self.xIFrameList.count; i ++) {
+        M3U8ExtXIFrameInf *xsinf = [self.xIFrameList xIFrameInfAtIndex:i];
+        if (xsinf.m3u8URL.absoluteString.length > 0) {
+            if (NO == [array containsObject:xsinf.m3u8URL]) {
+                [array addObject:xsinf.m3u8URL];
+            }
+        }
+    }
     return [array copy];
 }
 
