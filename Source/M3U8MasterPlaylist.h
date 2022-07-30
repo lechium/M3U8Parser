@@ -29,6 +29,7 @@
 @property (readonly, nonatomic, strong) M3U8ExtXMediaList *xMediaList;
 @property (readonly, nonatomic, strong) M3U8ExtXIFrameInfList *xIFrameList;
 
+- (NSArray *)allStreams;
 - (NSArray *)allStreamURLs;
 
 - (M3U8ExtXStreamInfList *)alternativeXStreamInfList;

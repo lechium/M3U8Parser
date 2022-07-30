@@ -13,6 +13,7 @@
 
 @property (nonatomic, assign ,readonly) NSUInteger count;
 
+- (NSArray <M3U8ExtXMedia*> *)allStreams;
 - (void)addExtXMedia:(M3U8ExtXMedia *)extXMedia;
 - (M3U8ExtXMedia *)xMediaAtIndex:(NSUInteger)index;
 - (M3U8ExtXMedia *)firstExtXMedia;

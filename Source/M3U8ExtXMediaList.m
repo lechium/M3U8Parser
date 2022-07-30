@@ -23,6 +23,11 @@
     return self;
 }
 
+- (NSArray <M3U8ExtXMedia*> *)allStreams {
+    return _m3u8InfoList;
+}
+
+
 - (NSUInteger)count {
     return self.m3u8InfoList.count;
 }

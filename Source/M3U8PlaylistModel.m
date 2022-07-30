@@ -212,6 +212,36 @@
     return prefix;
 }
 
+- (void)dumpRawPlaylistToPath:(NSString *)path error:(NSError **)error completion:(void(^)(NSArray *URLS))block {
+    NSFileManager *man = [NSFileManager defaultManager];
+    if ([man fileExistsAtPath:path]) {
+        return;
+    }
+    if (![man createDirectoryAtPath:path withIntermediateDirectories:true attributes:nil error:nil]){
+        return;
+    }
+    M3U8MasterPlaylist *master = [self masterPlaylist];
+    NSArray <NSURL *> * urls = [master allStreamURLs];
+    NSString *masterFile = [path stringByAppendingPathComponent:@"master.m3u8"];
+    [urls enumerateObjectsUsingBlock:^(NSURL * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *relative = [obj relativePath];
+        NSString *fileName = [relative lastPathComponent];
+        NSString *folderName = [relative stringByDeletingLastPathComponent];
+        //DLog(@"fileName: %@ folderName: %@",fileName, folderName );
+        NSString *fullFolderPath = [path stringByAppendingPathComponent:folderName];
+        NSString *fullFilePath = [fullFolderPath stringByAppendingPathComponent:fileName];
+        if (![man fileExistsAtPath:fullFolderPath]){
+            [man createDirectoryAtPath:fullFolderPath withIntermediateDirectories:true attributes:nil error:nil];
+        }
+        NSString *rawFile = [NSString stringWithContentsOfURL:obj encoding:NSUTF8StringEncoding error:nil];
+        [rawFile writeToFile:fullFilePath atomically:true encoding:NSUTF8StringEncoding error:nil];
+    }];
+    [master.originalText writeToFile:masterFile atomically:true encoding:NSUTF8StringEncoding error:nil];
+    if (block) {
+        block(urls);
+    }
+}
+
 - (NSArray *)segmentNamesForPlaylist:(M3U8MediaPlaylist *)playlist {
     
     NSString *prefix = [self prefixOfSegmentNameInPlaylist:playlist];

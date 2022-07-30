@@ -17,6 +17,7 @@
 - (M3U8ExtXStreamInf *)xStreamInfAtIndex:(NSUInteger)index;
 - (M3U8ExtXStreamInf *)firstStreamInf;
 - (M3U8ExtXStreamInf *)lastXStreamInf;
+- (NSArray <M3U8ExtXStreamInf*> *)allStreams;
 
 - (void)sortByBandwidthInOrder:(NSComparisonResult)order;
 

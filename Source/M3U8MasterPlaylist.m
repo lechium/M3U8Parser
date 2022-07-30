@@ -145,6 +145,14 @@
     }
 }
 
+- (NSArray *)allStreams {
+    NSMutableArray *all = [NSMutableArray new];
+    [all addObjectsFromArray:self.xStreamList.allStreams];
+    [all addObjectsFromArray:self.xIFrameList.allStreams];
+    [all addObjectsFromArray:self.xMediaList.allStreams];
+    return all;
+}
+
 - (NSArray *)allStreamURLs {
     NSMutableArray *array = [NSMutableArray array];
     for (int i = 0; i < self.xStreamList.count; i ++) {
@@ -157,6 +165,15 @@
     }
     for (int i = 0; i < self.xIFrameList.count; i ++) {
         M3U8ExtXIFrameInf *xsinf = [self.xIFrameList xIFrameInfAtIndex:i];
+        if (xsinf.m3u8URL.absoluteString.length > 0) {
+            if (NO == [array containsObject:xsinf.m3u8URL]) {
+                [array addObject:xsinf.m3u8URL];
+            }
+        }
+    }
+    
+    for (int i = 0; i < self.xMediaList.count; i ++) {
+        M3U8ExtXMedia *xsinf = [self.xMediaList xMediaAtIndex:i];
         if (xsinf.m3u8URL.absoluteString.length > 0) {
             if (NO == [array containsObject:xsinf.m3u8URL]) {
                 [array addObject:xsinf.m3u8URL];

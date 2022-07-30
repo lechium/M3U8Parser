@@ -25,6 +25,10 @@
     return self;
 }
 
+- (NSArray <M3U8ExtXStreamInf*> *)allStreams {
+    return _m3u8InfoList;
+}
+
 #pragma mark - Getter && Setter
 - (NSUInteger)count {
     return [self.m3u8InfoList count];

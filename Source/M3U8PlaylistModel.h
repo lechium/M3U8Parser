@@ -74,7 +74,7 @@
 
 // segment name will be formatted as ["%@%d.%@", prefix, index, sufix] eg. main_media_1.ts
 - (void)savePlaylistsToPath:(NSString *)path error:(NSError **)error;
-
+- (void)dumpRawPlaylistToPath:(NSString *)path error:(NSError **)error completion:(void(^)(NSArray *URLS))block;
 @end
 
 

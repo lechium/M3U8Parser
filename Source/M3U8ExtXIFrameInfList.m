@@ -16,6 +16,10 @@
 
 @implementation M3U8ExtXIFrameInfList
 
+- (NSArray <M3U8ExtXIFrameInf*> *)allStreams {
+    return _m3u8InfoList;
+}
+
 - (id)init {
     self = [super init];
     if (self) {

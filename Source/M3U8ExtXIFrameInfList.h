@@ -17,6 +17,7 @@
 - (M3U8ExtXIFrameInf *)xIFrameInfAtIndex:(NSUInteger)index;
 - (M3U8ExtXIFrameInf *)firstXIFrameInf;
 - (M3U8ExtXIFrameInf *)lastXIFrameInf;
+- (NSArray <M3U8ExtXIFrameInf*> *)allStreams;
 
 - (void)sortByBandwidthInOrder:(NSComparisonResult)order;
 
