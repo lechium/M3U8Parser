@@ -212,6 +212,21 @@
     return prefix;
 }
 
+- (BOOL)downloadM3UFromURL:(NSURL *)obj toPath:(NSString *)path {
+    NSFileManager *man = [NSFileManager defaultManager];
+    NSString *relative = [obj relativePath];
+    NSString *fileName = [relative lastPathComponent];
+    NSString *folderName = [relative stringByDeletingLastPathComponent];
+    //DLog(@"fileName: %@ folderName: %@",fileName, folderName );
+    NSString *fullFolderPath = [path stringByAppendingPathComponent:folderName];
+    NSString *fullFilePath = [fullFolderPath stringByAppendingPathComponent:fileName];
+    if (![man fileExistsAtPath:fullFolderPath]){
+        [man createDirectoryAtPath:fullFolderPath withIntermediateDirectories:true attributes:nil error:nil];
+    }
+    NSString *rawFile = [NSString stringWithContentsOfURL:obj encoding:NSUTF8StringEncoding error:nil];
+    return [rawFile writeToFile:fullFilePath atomically:true encoding:NSUTF8StringEncoding error:nil];
+}
+
 - (void)dumpRawPlaylistToPath:(NSString *)path error:(NSError **)error completion:(void(^)(NSArray *URLS))block {
     NSFileManager *man = [NSFileManager defaultManager];
     if ([man fileExistsAtPath:path]) {
@@ -224,17 +239,7 @@
     NSArray <NSURL *> * urls = [master allStreamURLs];
     NSString *masterFile = [path stringByAppendingPathComponent:@"master.m3u8"];
     [urls enumerateObjectsUsingBlock:^(NSURL * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSString *relative = [obj relativePath];
-        NSString *fileName = [relative lastPathComponent];
-        NSString *folderName = [relative stringByDeletingLastPathComponent];
-        //DLog(@"fileName: %@ folderName: %@",fileName, folderName );
-        NSString *fullFolderPath = [path stringByAppendingPathComponent:folderName];
-        NSString *fullFilePath = [fullFolderPath stringByAppendingPathComponent:fileName];
-        if (![man fileExistsAtPath:fullFolderPath]){
-            [man createDirectoryAtPath:fullFolderPath withIntermediateDirectories:true attributes:nil error:nil];
-        }
-        NSString *rawFile = [NSString stringWithContentsOfURL:obj encoding:NSUTF8StringEncoding error:nil];
-        [rawFile writeToFile:fullFilePath atomically:true encoding:NSUTF8StringEncoding error:nil];
+        [self downloadM3UFromURL:obj toPath:path];
     }];
     [master.originalText writeToFile:masterFile atomically:true encoding:NSUTF8StringEncoding error:nil];
     if (block) {
