@@ -43,4 +43,14 @@
     return [NSString stringWithFormat:@"%@", self.segmentInfoList];
 }
 
+- (M3U8SegmentInfo *)firstSegment {
+    return [self.segmentInfoList firstObject];
+}
+
+- (M3U8SegmentInfo *)lastSegment {
+    return [self.segmentInfoList lastObject];
+}
+
+
+
 @end
