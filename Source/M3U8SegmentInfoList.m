@@ -51,6 +51,10 @@
     return [self.segmentInfoList lastObject];
 }
 
+- (NSArray <M3U8SegmentInfo *>*)allSegments {
+    return [self.segmentInfoList copy];
+}
+
 
 
 @end

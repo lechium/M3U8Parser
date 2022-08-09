@@ -17,7 +17,7 @@
 @implementation M3U8ExtXIFrameInfList
 
 - (NSArray <M3U8ExtXIFrameInf*> *)allStreams {
-    return _m3u8InfoList;
+    return [_m3u8InfoList copy];
 }
 
 - (id)init {

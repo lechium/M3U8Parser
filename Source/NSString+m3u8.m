@@ -50,7 +50,7 @@
     return NO;
 }
 
-- (M3U8SegmentInfoList *)m3u_segementInfoListValueRelativeToURL:(NSString *)baseURL {
+- (M3U8SegmentInfoList *)m3u_segmentInfoListValueRelativeToURL:(NSString *)baseURL {
     // self == @""
     if (0 == self.length)
         return nil;
@@ -130,7 +130,32 @@
     return string;
 }
 
+
 - (NSMutableDictionary *)m3u_attributesFromAssignment {
+    // ([#:\w\d-]*)=\"?([\w/\.-]*)\"?
+    NSMutableDictionary *dict = [NSMutableDictionary new];
+    NSRegularExpression *exp = [[NSRegularExpression alloc] initWithPattern:@"([:#\\w\\d-]*)=\"?([\\w-/\\.]*)\"?" options:NSRegularExpressionCaseInsensitive | NSRegularExpressionAnchorsMatchLines error:nil];
+    NSArray <NSTextCheckingResult *> *matches = [exp matchesInString:self options:NSMatchingReportCompletion range:NSMakeRange(0, self.length)];
+    for (NSTextCheckingResult *entry in matches) {
+        if (entry.numberOfRanges == 3){
+            NSString *key = nil, *value = nil;
+            NSRange range = [entry rangeAtIndex:1];
+            if (range.location != NSNotFound){
+                key = [self substringWithRange:range];
+            }
+            range = [entry rangeAtIndex:2];
+            if (range.location != NSNotFound){
+                value = [self substringWithRange:range];
+            }
+            if (key && value){
+                dict[key] = value;
+            }
+        }
+    }
+    return dict;
+}
+
+- (NSMutableDictionary *)m3u_attributesFromAssignmentOLD {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     
     NSArray<NSString *> *keyValues = [self componentsSeparatedByString:@","];

@@ -16,8 +16,8 @@
 - (BOOL)m3u_isMasterPlaylist;
 - (BOOL)m3u_isMediaPlaylist;
 
-- (M3U8SegmentInfoList *)m3u_segementInfoListValueRelativeToURL:(NSString *)baseURL;
-
+- (M3U8SegmentInfoList *)m3u_segmentInfoListValueRelativeToURL:(NSString *)baseURL;
+- (NSString *)m3u_stringByTrimmingQuoteMark;
 /**
  @return "key=value" transform to dictionary
  */

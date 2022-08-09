@@ -26,7 +26,7 @@
 }
 
 - (NSArray <M3U8ExtXStreamInf*> *)allStreams {
-    return _m3u8InfoList;
+    return [_m3u8InfoList copy];
 }
 
 #pragma mark - Getter && Setter

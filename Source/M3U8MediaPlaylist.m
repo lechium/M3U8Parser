@@ -135,5 +135,14 @@
     }
 }
 
+- (M3U8SegmentInfoList *)segmentListRebased:(NSString *)baseURL {
+    return [self.originalText m3u_segmentInfoListValueRelativeToURL:baseURL];
+}
+
+- (NSString *)relativeOutputPath {
+    NSString *op = self.originalURL ? [[self.originalURL relativePath] stringByDeletingLastPathComponent] : [self.baseURL relativePath];
+    return op;
+}
+
 @end
 

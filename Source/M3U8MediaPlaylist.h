@@ -36,7 +36,7 @@ typedef enum {
 
 - (instancetype)initWithContent:(NSString *)string type:(M3U8MediaPlaylistType)type baseURL:(NSURL *)baseURL;
 - (instancetype)initWithContentOfURL:(NSURL *)URL type:(M3U8MediaPlaylistType)type error:(NSError **)error;
-
+- (NSString *)relativeOutputPath;
 - (NSArray *)allSegmentURLs;
-
+- (M3U8SegmentInfoList *)segmentListRebased:(NSString *)baseURL;
 @end

@@ -17,4 +17,5 @@
 - (M3U8SegmentInfo *)segmentInfoAtIndex:(NSUInteger)index;
 - (M3U8SegmentInfo *)firstSegment;
 - (M3U8SegmentInfo *)lastSegment;
+- (NSArray <M3U8SegmentInfo *>*)allSegments;
 @end
