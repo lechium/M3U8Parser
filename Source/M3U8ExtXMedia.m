@@ -115,6 +115,9 @@
     if (bStr.length > 0) {
         [str appendString:[NSString stringWithFormat:@",BANDWIDTH=%@", bStr]];
     }
+    if (self.instreamId) {
+        [str appendString:[NSString stringWithFormat:@",%@=\"%@\"", M3U8_EXT_X_MEDIA_INSTREAM_ID, self.instreamId]];
+    }
     
     return str;
 }
