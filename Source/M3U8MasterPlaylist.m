@@ -107,7 +107,6 @@
         }
         
         
-        // Ignore the following tag, which is not implemented yet.
         // #EXT-X-I-FRAME-STREAM-INF:BANDWIDTH=65531,PROGRAM-ID=1,CODECS="avc1.42c00c",RESOLUTION=320x180,URI="/talks/769/video/64k_iframe.m3u8?sponsor=Ripple"
         else if ([line hasPrefix:M3U8_EXT_X_I_FRAME_STREAM_INF]) {
             NSRange range = [line rangeOfString:M3U8_EXT_X_I_FRAME_STREAM_INF];
@@ -218,6 +217,15 @@
         [str appendString:[NSString stringWithFormat:@"%@%@", M3U8_EXT_X_VERSION, self.version]];
         [str appendString:@"\n"];
     }
+    
+    M3U8ExtXMediaList *ccList = self.xMediaList.closedCaptionsList;
+    for (NSInteger i = 0; i < ccList.count; i ++) {
+        NSLog(@"ext x media %ld", (long)i);
+        M3U8ExtXMedia *media = [ccList xMediaAtIndex:i];
+        [str appendString:media.m3u8PlainString];
+        [str appendString:@"\n"];
+    }
+    
     for (NSInteger index = 0; index < self.xStreamList.count; index ++) {
         M3U8ExtXStreamInf *xsinf = [self.xStreamList xStreamInfAtIndex:index];
         [str appendString:xsinf.m3u8PlainString];

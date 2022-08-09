@@ -121,6 +121,7 @@
     return subtitleList;
 }
 
+
 - (M3U8ExtXMedia *)suitableSubtitle {
     NSString *lan = [NSLocale preferredLanguages].firstObject;
     NSArray *copy = [self.m3u8InfoList copy];
@@ -136,6 +137,17 @@
         }
     }
     return suitableSubtitle;
+}
+
+- (M3U8ExtXMediaList *)closedCaptionsList {
+    M3U8ExtXMediaList *subtitleList = [[M3U8ExtXMediaList alloc] init];
+    NSArray *copy = [self.m3u8InfoList copy];
+    for (M3U8ExtXMedia *media in copy) {
+        if ([media.type isEqualToString:@"CLOSED-CAPTIONS"]) {
+            [subtitleList addExtXMedia:media];
+        }
+    }
+    return subtitleList;
 }
 
 - (NSString *)description {

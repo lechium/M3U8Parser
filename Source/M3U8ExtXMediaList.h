@@ -28,4 +28,6 @@
 - (M3U8ExtXMediaList *)subtitleList;
 - (M3U8ExtXMedia *)suitableSubtitle;
 
+- (M3U8ExtXMediaList *)closedCaptionsList;
+
 @end

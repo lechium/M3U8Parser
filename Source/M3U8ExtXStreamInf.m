@@ -75,6 +75,10 @@ MediaResoulution MediaResolutionMake(float width, float height) {
     return [self.dictionary[M3U8_EXT_X_STREAM_INF_PROGRAM_ID] integerValue];
 }
 
+- (NSString *)framerate {
+    return self.dictionary[M3U8_EXT_X_STREAM_INF_FRAME_RATE];
+}
+
 - (NSArray *)codecs {
     NSString *codecsString = self.dictionary[M3U8_EXT_X_STREAM_INF_CODECS];
     return [codecsString componentsSeparatedByString:@","];
@@ -127,13 +131,19 @@ MediaResoulution MediaResolutionMake(float width, float height) {
     if (self.averageBandwidth > 0) {
         [str appendString:[NSString stringWithFormat:@",AVERAGE-BANDWIDTH=%ld", (long)self.averageBandwidth]];
     }
-    
+    NSString *fr = self.framerate;
+    if (fr.length > 0) {
+        [str appendString:[NSString stringWithFormat:@",%@=%@",M3U8_EXT_X_STREAM_INF_FRAME_RATE, fr]];
+    }
     [str appendString:[NSString stringWithFormat:@",PROGRAM-ID=%ld", (long)self.programId]];
     NSString *codecsString = self.dictionary[M3U8_EXT_X_STREAM_INF_CODECS];
     [str appendString:[NSString stringWithFormat:@",CODECS=\"%@\"", codecsString]];
     NSString *rStr = self.dictionary[M3U8_EXT_X_STREAM_INF_RESOLUTION];
     if (rStr.length > 0) {
         [str appendString:[NSString stringWithFormat:@",RESOLUTION=%@", rStr]];
+    }
+    if (self.closedCaptions.length > 0){
+        [str appendString:[NSString stringWithFormat:@",%@=\"%@\"", M3U8_EXT_X_STREAM_INF_CLOSED_CAPTIONS,  self.closedCaptions]];
     }
     [str appendString:[NSString stringWithFormat:@"\n%@", self.URI.absoluteString]];
     return str;

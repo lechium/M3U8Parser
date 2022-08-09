@@ -107,8 +107,9 @@
     if (fStr.length > 0) {
         [str appendString:[NSString stringWithFormat:@",FORCED=%@", fStr]];
     }
-    
-    [str appendString:[NSString stringWithFormat:@",URI=\"%@\"", self.URI.absoluteString]];
+    if (self.URI.absoluteString.length > 0) {
+        [str appendString:[NSString stringWithFormat:@",URI=\"%@\"", self.URI.absoluteString]];
+    }
     
     NSString *bStr = self.dictionary[M3U8_EXT_X_MEDIA_BANDWIDTH];
     if (bStr.length > 0) {

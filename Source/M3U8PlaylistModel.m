@@ -238,10 +238,12 @@
     M3U8MasterPlaylist *master = [self masterPlaylist];
     NSArray <NSURL *> * urls = [master allStreamURLs];
     NSString *masterFile = [path stringByAppendingPathComponent:@"master.m3u8"];
+    NSString *masterAlt = [path stringByAppendingPathComponent:@"masterAlt.m3u8"];
     [urls enumerateObjectsUsingBlock:^(NSURL * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [self downloadM3UFromURL:obj toPath:path];
     }];
     [master.originalText writeToFile:masterFile atomically:true encoding:NSUTF8StringEncoding error:nil];
+    [master.m3u8PlainString writeToFile:masterAlt atomically:true encoding:NSUTF8StringEncoding error:nil];
     if (block) {
         block(urls);
     }

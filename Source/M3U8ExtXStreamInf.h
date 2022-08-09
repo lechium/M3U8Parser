@@ -55,6 +55,7 @@ MediaResoulution MediaResolutionFromString(NSString *string);
 @property (nonatomic, readonly, copy) NSString *audio;
 @property (nonatomic, readonly, copy) NSString *video;
 @property (nonatomic, readonly, copy) NSString *subtitles;
+@property (nonatomic, readonly, copy) NSString *framerate;
 @property (nonatomic, readonly, copy) NSString *closedCaptions;
 @property (nonatomic, readonly, copy) NSURL   *URI;
 
