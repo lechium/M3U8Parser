@@ -229,11 +229,21 @@
 
 - (void)dumpRawPlaylistToPath:(NSString *)path error:(NSError **)error completion:(void(^)(NSArray *URLS))block {
     NSFileManager *man = [NSFileManager defaultManager];
+    /*
     if ([man fileExistsAtPath:path]) {
+        *error = [NSError errorWithDomain:NSCocoaErrorDomain code:NSFileWriteFileExistsError userInfo:@{}];
+        if (block){
+            block(nil);
+        }
         return;
-    }
-    if (![man createDirectoryAtPath:path withIntermediateDirectories:true attributes:nil error:nil]){
-        return;
+    }*/
+    if (![man fileExistsAtPath:path]){
+        if (![man createDirectoryAtPath:path withIntermediateDirectories:true attributes:nil error:error]){
+            if (block){
+                block(nil);
+            }
+            return;
+        }
     }
     M3U8MasterPlaylist *master = [self masterPlaylist];
     NSArray <NSURL *> * urls = [master allStreamURLs];
