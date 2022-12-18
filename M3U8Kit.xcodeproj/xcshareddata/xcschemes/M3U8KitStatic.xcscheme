@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4CD0C2C728B5B3AE00606E83"
-               BuildableName = "libM3U8Kits.a"
+               BuildableName = "libM3U8KitStatic.a"
                BlueprintName = "M3U8KitStatic"
                ReferencedContainer = "container:M3U8Kit.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4CD0C2C728B5B3AE00606E83"
-            BuildableName = "libM3U8Kits.a"
+            BuildableName = "libM3U8KitStatic.a"
             BlueprintName = "M3U8KitStatic"
             ReferencedContainer = "container:M3U8Kit.xcodeproj">
          </BuildableReference>

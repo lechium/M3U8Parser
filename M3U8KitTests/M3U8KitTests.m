@@ -52,6 +52,8 @@
                                    error:&error];
     NSLog(@"%@", playList);
     NSArray *codecs = [playList.masterPlaylist.xStreamList xStreamInfAtIndex:0].codecs;
+    NSLog(@"codecs %@", codecs);
+    
     XCTAssert([codecs[0] isEqualToString:@"avc1.42c01e"]);
     XCTAssert([codecs[1] isEqualToString:@"mp4a.40.2"]);
     XCTAssertNil(error);
