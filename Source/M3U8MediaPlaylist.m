@@ -7,7 +7,7 @@
 //
 
 #import "M3U8MediaPlaylist.h"
-#import "NSString+m3u8.h"
+#import "NSString+m3u8kit.h"
 #import "M3U8TagsAndAttributes.h"
 #import "NSURL+m3u8.h"
 #import "M3U8LineReader.h"

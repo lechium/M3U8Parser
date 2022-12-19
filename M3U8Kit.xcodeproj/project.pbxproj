@@ -14,7 +14,7 @@
 		012455D42525B8EC00AF62C3 /* M3U8LineReader.h in Headers */ = {isa = PBXBuildFile; fileRef = 01B38E3F20EA30AB00AC6443 /* M3U8LineReader.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		01B38E2C20EA2F8B00AC6443 /* M3U8KitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01B38E2B20EA2F8B00AC6443 /* M3U8KitTests.m */; };
 		01B38E2E20EA2F8B00AC6443 /* M3U8Kit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D79F1251EF77CE400D16AFD /* M3U8Kit.framework */; };
-		01B38E3420EA308F00AC6443 /* NSString+m3u8.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1301EF784E500D16AFD /* NSString+m3u8.m */; };
+		01B38E3420EA308F00AC6443 /* NSString+m3u8kit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1301EF784E500D16AFD /* NSString+m3u8kit.m */; };
 		01B38E3520EA308F00AC6443 /* NSURL+m3u8.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1321EF784E500D16AFD /* NSURL+m3u8.m */; };
 		01B38E3620EA308F00AC6443 /* M3U8PlaylistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1351EF784E500D16AFD /* M3U8PlaylistModel.m */; };
 		01B38E3720EA308F00AC6443 /* M3U8ExtXMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1391EF784E500D16AFD /* M3U8ExtXMedia.m */; };
@@ -35,7 +35,7 @@
 		4C29F70828934B70000FBAC3 /* M3U8ExtXIFrameInf.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C29F70128934681000FBAC3 /* M3U8ExtXIFrameInf.m */; };
 		4CD0C2CB28B5B3AE00606E83 /* M3U8Kits.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CD0C2CA28B5B3AE00606E83 /* M3U8Kits.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CD0C2CD28B5B3AE00606E83 /* M3U8Kits.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0C2CC28B5B3AE00606E83 /* M3U8Kits.m */; };
-		4CD0C2D128B5B5FA00606E83 /* NSString+m3u8.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1301EF784E500D16AFD /* NSString+m3u8.m */; };
+		4CD0C2D128B5B5FA00606E83 /* NSString+m3u8kit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1301EF784E500D16AFD /* NSString+m3u8kit.m */; };
 		4CD0C2D228B5B5FA00606E83 /* NSURL+m3u8.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1321EF784E500D16AFD /* NSURL+m3u8.m */; };
 		4CD0C2D328B5B5FA00606E83 /* M3U8PlaylistModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1351EF784E500D16AFD /* M3U8PlaylistModel.m */; };
 		4CD0C2D428B5B5FA00606E83 /* M3U8ExtXMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1391EF784E500D16AFD /* M3U8ExtXMedia.m */; };
@@ -51,7 +51,7 @@
 		4CD0C2DE28B5B5FB00606E83 /* M3U8MediaPlaylist.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1441EF784E500D16AFD /* M3U8MediaPlaylist.m */; };
 		4CD0C2DF28B5B5FB00606E83 /* M3U8SegmentInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1461EF784E500D16AFD /* M3U8SegmentInfo.m */; };
 		4CD0C2E028B5B5FB00606E83 /* M3U8SegmentInfoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1481EF784E500D16AFD /* M3U8SegmentInfoList.m */; };
-		4CD0C2E128B5B62200606E83 /* NSString+m3u8.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F12F1EF784E500D16AFD /* NSString+m3u8.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CD0C2E128B5B62200606E83 /* NSString+m3u8kit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F12F1EF784E500D16AFD /* NSString+m3u8kit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CD0C2E228B5B62200606E83 /* NSURL+m3u8.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F1311EF784E500D16AFD /* NSURL+m3u8.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CD0C2E328B5B62200606E83 /* M3U8Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F1331EF784E500D16AFD /* M3U8Parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CD0C2E428B5B62200606E83 /* M3U8PlaylistModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F1341EF784E500D16AFD /* M3U8PlaylistModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,8 +71,8 @@
 		4CD0C2F228B5B62300606E83 /* M3U8SegmentInfoList.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F1471EF784E500D16AFD /* M3U8SegmentInfoList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CD0C2F328B5B62300606E83 /* M3U8Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F1271EF77CE500D16AFD /* M3U8Kit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D79F1291EF77CE500D16AFD /* M3U8Kit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F1271EF77CE500D16AFD /* M3U8Kit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D79F14A1EF784E500D16AFD /* NSString+m3u8.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F12F1EF784E500D16AFD /* NSString+m3u8.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D79F14C1EF784E500D16AFD /* NSString+m3u8.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1301EF784E500D16AFD /* NSString+m3u8.m */; };
+		9D79F14A1EF784E500D16AFD /* NSString+m3u8kit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F12F1EF784E500D16AFD /* NSString+m3u8kit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D79F14C1EF784E500D16AFD /* NSString+m3u8kit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1301EF784E500D16AFD /* NSString+m3u8kit.m */; };
 		9D79F14E1EF784E500D16AFD /* NSURL+m3u8.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F1311EF784E500D16AFD /* NSURL+m3u8.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D79F1501EF784E500D16AFD /* NSURL+m3u8.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D79F1321EF784E500D16AFD /* NSURL+m3u8.m */; };
 		9D79F1521EF784E500D16AFD /* M3U8Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D79F1331EF784E500D16AFD /* M3U8Parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -133,8 +133,8 @@
 		9D79F1251EF77CE400D16AFD /* M3U8Kit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M3U8Kit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D79F1271EF77CE500D16AFD /* M3U8Kit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3U8Kit.h; sourceTree = "<group>"; };
 		9D79F1281EF77CE500D16AFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D79F12F1EF784E500D16AFD /* NSString+m3u8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+m3u8.h"; sourceTree = "<group>"; };
-		9D79F1301EF784E500D16AFD /* NSString+m3u8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+m3u8.m"; sourceTree = "<group>"; };
+		9D79F12F1EF784E500D16AFD /* NSString+m3u8kit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+m3u8kit.h"; sourceTree = "<group>"; };
+		9D79F1301EF784E500D16AFD /* NSString+m3u8kit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+m3u8kit.m"; sourceTree = "<group>"; };
 		9D79F1311EF784E500D16AFD /* NSURL+m3u8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+m3u8.h"; sourceTree = "<group>"; };
 		9D79F1321EF784E500D16AFD /* NSURL+m3u8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+m3u8.m"; sourceTree = "<group>"; };
 		9D79F1331EF784E500D16AFD /* M3U8Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3U8Parser.h; sourceTree = "<group>"; };
@@ -266,8 +266,8 @@
 		9D79F12E1EF784E500D16AFD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				9D79F12F1EF784E500D16AFD /* NSString+m3u8.h */,
-				9D79F1301EF784E500D16AFD /* NSString+m3u8.m */,
+				9D79F12F1EF784E500D16AFD /* NSString+m3u8kit.h */,
+				9D79F1301EF784E500D16AFD /* NSString+m3u8kit.m */,
 				9D79F1311EF784E500D16AFD /* NSURL+m3u8.h */,
 				9D79F1321EF784E500D16AFD /* NSURL+m3u8.m */,
 			);
@@ -321,7 +321,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CD0C2E128B5B62200606E83 /* NSString+m3u8.h in Headers */,
+				4CD0C2E128B5B62200606E83 /* NSString+m3u8kit.h in Headers */,
 				4CD0C2E228B5B62200606E83 /* NSURL+m3u8.h in Headers */,
 				4CD0C2E328B5B62200606E83 /* M3U8Parser.h in Headers */,
 				4CD0C2E428B5B62200606E83 /* M3U8PlaylistModel.h in Headers */,
@@ -358,7 +358,7 @@
 				9D79F15E1EF784E500D16AFD /* M3U8ExtXMediaList.h in Headers */,
 				9D79F1761EF784E500D16AFD /* M3U8SegmentInfoList.h in Headers */,
 				9D79F1291EF77CE500D16AFD /* M3U8Kit.h in Headers */,
-				9D79F14A1EF784E500D16AFD /* NSString+m3u8.h in Headers */,
+				9D79F14A1EF784E500D16AFD /* NSString+m3u8kit.h in Headers */,
 				4C29F70428934681000FBAC3 /* M3U8ExtXIFrameInfList.h in Headers */,
 				9D79F1621EF784E500D16AFD /* M3U8ExtXStreamInf.h in Headers */,
 				9D79F14E1EF784E500D16AFD /* NSURL+m3u8.h in Headers */,
@@ -505,7 +505,7 @@
 				01B38E3720EA308F00AC6443 /* M3U8ExtXMedia.m in Sources */,
 				4C29F70828934B70000FBAC3 /* M3U8ExtXIFrameInf.m in Sources */,
 				01B38E3920EA308F00AC6443 /* M3U8ExtXStreamInf.m in Sources */,
-				01B38E3420EA308F00AC6443 /* NSString+m3u8.m in Sources */,
+				01B38E3420EA308F00AC6443 /* NSString+m3u8kit.m in Sources */,
 				012455C62525ABFD00AF62C3 /* M3U8ExtXByteRange.m in Sources */,
 				01B38E3A20EA308F00AC6443 /* M3U8ExtXStreamInfList.m in Sources */,
 				01B38E3620EA308F00AC6443 /* M3U8PlaylistModel.m in Sources */,
@@ -517,7 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CD0C2D128B5B5FA00606E83 /* NSString+m3u8.m in Sources */,
+				4CD0C2D128B5B5FA00606E83 /* NSString+m3u8kit.m in Sources */,
 				4CD0C2D228B5B5FA00606E83 /* NSURL+m3u8.m in Sources */,
 				4CD0C2D328B5B5FA00606E83 /* M3U8PlaylistModel.m in Sources */,
 				4CD0C2D428B5B5FA00606E83 /* M3U8ExtXMedia.m in Sources */,
@@ -554,7 +554,7 @@
 				9D79F1601EF784E500D16AFD /* M3U8ExtXMediaList.m in Sources */,
 				9D79F1641EF784E500D16AFD /* M3U8ExtXStreamInf.m in Sources */,
 				9D79F1561EF784E500D16AFD /* M3U8PlaylistModel.m in Sources */,
-				9D79F14C1EF784E500D16AFD /* NSString+m3u8.m in Sources */,
+				9D79F14C1EF784E500D16AFD /* NSString+m3u8kit.m in Sources */,
 				01B38E4420EA30FD00AC6443 /* M3U8LineReader.m in Sources */,
 				F97F1AB22204979A006F5717 /* M3U8ExtXKey.m in Sources */,
 			);

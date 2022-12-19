@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 0day. All rights reserved.
 //
 
-#import "NSString+m3u8.h"
+#import "NSString+m3u8kit.h"
 #import "M3U8SegmentInfo.h"
 #import "M3U8SegmentInfoList.h"
 #import "M3U8ExtXStreamInf.h"
@@ -14,7 +14,7 @@
 
 #import "M3U8TagsAndAttributes.h"
 
-@implementation NSString (m3u8)
+@implementation NSString (m3u8kit)
 
 /**
  The Extended M3U file format defines two tags: EXTM3U and EXTINF.  An
